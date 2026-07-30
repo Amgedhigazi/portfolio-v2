@@ -125,11 +125,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.9
 
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);margin-top:3rem}
-.svc{background:var(--bg2);padding:2rem 1.5rem;transition:background 0.2s}
+.svc{background:var(--bg2);padding:2rem 1.5rem;transition:background 0.2s,box-shadow 0.2s;cursor:pointer}
 .svc:hover{background:var(--bg3)}
 .svc-num{font-size:11px;letter-spacing:0.1em;color:var(--muted2);margin-bottom:1rem}
-.svc-title{font-size:16px;font-weight:400;margin-bottom:0.6rem}
+.svc-title{font-size:16px;font-weight:400;margin-bottom:0.6rem;transition:color 0.25s}
 .svc-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.svc--active .svc-title{color:#e07a2f}
+.svc-tap{font-size:10px;letter-spacing:0.1em;color:var(--muted2);margin-top:1rem;opacity:0.6}
+/* MODAL */
+.svc-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:400;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.svc-modal-overlay.open{opacity:1;pointer-events:all}
+.svc-modal-box{background:#161616;border:0.5px solid rgba(255,255,255,0.1);max-width:460px;width:90%;padding:2.5rem 2.5rem 2rem;position:relative;transform:translateY(18px) scale(0.98);transition:transform 0.3s}
+.svc-modal-overlay.open .svc-modal-box{transform:translateY(0) scale(1)}
+.svc-modal-num{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#e07a2f;margin-bottom:0.5rem}
+.svc-modal-title{font-size:20px;font-weight:300;color:#e8e4dc;margin-bottom:1.6rem;line-height:1.3}
+.svc-modal-points{list-style:none;display:flex;flex-direction:column;gap:10px}
+.svc-modal-points li{font-size:13px;color:#aaa;line-height:1.55;padding-left:1.4rem;position:relative}
+.svc-modal-points li::before{content:'—';position:absolute;left:0;color:#c8a96e}
+.svc-modal-close{position:absolute;top:1rem;right:1.4rem;background:none;border:none;color:#555;font-size:24px;line-height:1;cursor:pointer;transition:color 0.2s}
+.svc-modal-close:hover{color:#e07a2f}
 
 /* CONTACT */
 .contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;margin-top:3rem}
@@ -526,16 +540,26 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
   <h2 class="sec-title">Services</h2>
   <div class="divider-line"></div>
   <div class="services-grid">
-    <div class="svc"><p class="svc-num">01</p><p class="svc-title">Web Development</p><p class="svc-desc">React, Node, JavaScript, HTML5, CSS3, Bootstrap. Responsive, performant, full-stack websites from concept to deployment.</p></div>
-    <div class="svc"><p class="svc-num">02</p><p class="svc-title">Web Design</p><p class="svc-desc">UI/UX design, wireframes, and visual systems. Intuitive, elegant, built to convert.</p></div>
-    <div class="svc"><p class="svc-num">03</p><p class="svc-title">Graphic Design</p><p class="svc-desc">Brand identities, logos, editorial layouts, print advertising, posters — 20 years of international experience.</p></div>
-    <div class="svc"><p class="svc-num">04</p><p class="svc-title">Photography</p><p class="svc-desc">Fashion, portrait, editorial, corporate, landscape, food, and sport photography with full art direction.</p></div>
-    <div class="svc"><p class="svc-num">05</p><p class="svc-title">Art Direction</p><p class="svc-desc">Creative vision, campaign management, and design leadership for brands and publications.</p></div>
-    <div class="svc"><p class="svc-num">06</p><p class="svc-title">Photo Editing</p><p class="svc-desc">Professional retouching, colour grading, and photo manipulation.</p></div>
-    <div class="svc"><p class="svc-num">07</p><p class="svc-title">Social Media Management</p><p class="svc-desc">Content strategy, visual identity, post production, and community management across Instagram, Facebook, TikTok, and LinkedIn.</p></div>
-    <div class="svc"><p class="svc-num">08</p><p class="svc-title">AI Integration &amp; Agent Development</p><p class="svc-desc">Embedding AI into websites and apps — custom agents, workflow automation, and intelligent interfaces built on modern LLM APIs.</p></div>
-    <div class="svc"><p class="svc-num">09</p><p class="svc-title">Advertising &amp; Promotional Campaigns</p><p class="svc-desc">End-to-end campaign production — concept, copywriting, visual design, and rollout across print, digital, and social channels.</p></div>
-    <div class="svc"><p class="svc-num">10</p><p class="svc-title">Brand Identity &amp; Startup Solutions</p><p class="svc-desc">Naming, logo design, brand guidelines, and full visual identity packages tailored for new businesses launching and establishing their market presence.</p></div>
+    <div class="svc" data-num="01" data-title="Web Development" data-points="Custom React &amp; Next.js web applications|Node.js REST APIs &amp; backend services|MongoDB, Supabase &amp; PostgreSQL integration|Responsive, mobile-first layouts|Deployment on Vercel, Railway &amp; Netlify|WordPress &amp; headless CMS integration"><p class="svc-num">01</p><p class="svc-title">Web Development</p><p class="svc-desc">React, Node, JavaScript, HTML5, CSS3, Bootstrap. Responsive, performant, full-stack from concept to deployment.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="02" data-title="Web Design" data-points="UI/UX wireframing &amp; prototyping|Responsive &amp; accessible design systems|Figma &amp; Adobe XD mockups|Component libraries &amp; style guides|Conversion-focused landing pages|Dark &amp; light mode theming"><p class="svc-num">02</p><p class="svc-title">Web Design</p><p class="svc-desc">UI/UX design, wireframes, and visual systems. Intuitive, elegant, built to convert.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="03" data-title="Graphic Design" data-points="Logo &amp; brand identity design|Print advertising &amp; marketing materials|Editorial layouts &amp; publications|Poster, banner &amp; outdoor design|Social media graphics &amp; templates|Packaging &amp; product design"><p class="svc-num">03</p><p class="svc-title">Graphic Design</p><p class="svc-desc">Brand identities, logos, editorial layouts, print advertising, posters — 20 years of international experience.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="04" data-title="Photography" data-points="Fashion &amp; portrait photography|Editorial &amp; commercial shoots|Corporate, product &amp; food photography|Lifestyle &amp; event coverage|Full on-set art direction &amp; styling|Post-production &amp; image delivery"><p class="svc-num">04</p><p class="svc-title">Photography</p><p class="svc-desc">Fashion, portrait, editorial, corporate, landscape, food, and sport photography with full art direction.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="05" data-title="Art Direction" data-points="Creative brief development|Campaign visual concept &amp; strategy|Cross-discipline team leadership|Brand consistency &amp; tone of voice|Visual storytelling for print &amp; digital|Shoot planning &amp; production oversight"><p class="svc-num">05</p><p class="svc-title">Art Direction</p><p class="svc-desc">Creative vision, campaign management, and design leadership for brands and publications.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="06" data-title="Photo Editing" data-points="High-end skin retouching &amp; compositing|Colour grading &amp; tone correction|Background removal &amp; replacement|Lightroom catalogue organisation|Batch processing for large volumes|Photoshop &amp; Lightroom mastery"><p class="svc-num">06</p><p class="svc-title">Photo Editing</p><p class="svc-desc">Professional retouching, colour grading, and photo manipulation.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="07" data-title="Social Media Management" data-points="Platform strategy — Instagram, Facebook, TikTok, LinkedIn|Content calendar planning &amp; scheduling|Post design &amp; caption writing|Community engagement &amp; moderation|Analytics reporting &amp; growth tracking|Paid ads coordination &amp; creative briefing"><p class="svc-num">07</p><p class="svc-title">Social Media Management</p><p class="svc-desc">Content strategy, visual identity, post production, and community management across all major platforms.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="08" data-title="AI Integration &amp; Agent Development" data-points="Claude &amp; OpenAI API integration|Custom chatbot &amp; assistant development|RAG knowledge bases &amp; document AI|Workflow automation with AI agents|AI-powered features embedded in web apps|Prompt engineering &amp; model fine-tuning"><p class="svc-num">08</p><p class="svc-title">AI Integration &amp; Agent Development</p><p class="svc-desc">Embedding AI into websites and apps — custom agents, workflow automation, intelligent interfaces.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="09" data-title="Advertising &amp; Promotional Campaigns" data-points="Campaign concept &amp; creative strategy|Copywriting for print &amp; digital|Visual asset production &amp; layout|Multi-channel rollout — social, print, outdoor|Promotional video &amp; motion coordination|Campaign performance review &amp; iteration"><p class="svc-num">09</p><p class="svc-title">Advertising &amp; Promotional Campaigns</p><p class="svc-desc">End-to-end campaign production — concept, copywriting, visual design, and multi-channel rollout.</p><p class="svc-tap">Click to see details</p></div>
+    <div class="svc" data-num="10" data-title="Brand Identity &amp; Startup Solutions" data-points="Business naming &amp; slogan development|Logo design &amp; colour palette|Typography system &amp; brand guidelines|Business card, stationery &amp; signage|Digital brand kit &amp; asset library|Full launch-ready brand package"><p class="svc-num">10</p><p class="svc-title">Brand Identity &amp; Startup Solutions</p><p class="svc-desc">Naming, logo, brand guidelines, and full visual identity packages for new businesses establishing their presence.</p><p class="svc-tap">Click to see details</p></div>
+  </div>
+
+  <!-- Service popup modal -->
+  <div class="svc-modal-overlay" id="svcModal">
+    <div class="svc-modal-box">
+      <button class="svc-modal-close" id="svcClose">&times;</button>
+      <p class="svc-modal-num" id="svcModalNum"></p>
+      <p class="svc-modal-title" id="svcModalTitle"></p>
+      <ul class="svc-modal-points" id="svcModalPoints"></ul>
+    </div>
   </div>
 </section>
 
@@ -593,6 +617,34 @@ function showTab(id,btn){
   document.getElementById('tab-'+id).classList.add('active');
   btn.classList.add('active');
 }
+
+// Service card popup
+(function(){
+  const overlay = document.getElementById('svcModal');
+  const closeBtn = document.getElementById('svcClose');
+  let activeCard = null;
+
+  function openModal(card){
+    if(activeCard) activeCard.classList.remove('svc--active');
+    activeCard = card;
+    card.classList.add('svc--active');
+    document.getElementById('svcModalNum').textContent = card.dataset.num;
+    document.getElementById('svcModalTitle').innerHTML = card.dataset.title;
+    const ul = document.getElementById('svcModalPoints');
+    ul.innerHTML = card.dataset.points.split('|').map(p=>`<li>${p}</li>`).join('');
+    overlay.classList.add('open');
+  }
+
+  function closeModal(){
+    overlay.classList.remove('open');
+    if(activeCard){ activeCard.classList.remove('svc--active'); activeCard=null; }
+  }
+
+  document.querySelectorAll('.svc').forEach(c=>c.addEventListener('click',()=>openModal(c)));
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', e=>{ if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+})();
 </script>
 </body>
 </html>
