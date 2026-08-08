@@ -690,12 +690,21 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
   </div>
 
   <div class="tab-panel" id="tab-graphic">
+
+    <div class="photo-hero">
+      <img src="graphic/dantom-menu/spread.jpg" alt="Graphic Design — Amged Higazi" loading="eager">
+    </div>
+
     <p style="color:var(--muted);font-size:14px;margin-bottom:3rem;max-width:640px;line-height:1.9;">20+ years of international graphic design — editorial layouts, magazine publications, print advertising, restaurant branding, and out-of-home campaigns across Oman, Sudan, and Germany.</p>
 
     <!-- COVERS -->
     <div class="photo-cat">
       <p class="photo-cat-label">Covers</p>
-      <div class="graphic-grid gd-portrait">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="covers">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="covers">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-covers" data-carousel="covers">
         <img src="graphic/ads/isboua4again.jpg"                   alt="Al-Assboua magazine cover" loading="lazy">
         <img src="graphic/published/4-5-cover-E1_Template-TW.jpg" alt="The Week cover"            loading="lazy">
         <img src="graphic/ads/Septnew.jpg"                        alt="September issue cover"     loading="lazy">
@@ -707,7 +716,11 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
     <!-- PUBLISHED SPREADS — Dantom Restaurant -->
     <div class="photo-cat" style="margin-top:2.5rem">
       <p class="photo-cat-label">Published Pages — Dantom Restaurant Editorial</p>
-      <div class="spread-strip" data-carousel="dantom">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="dantom">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="dantom">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-dantom" data-carousel="dantom">
         <img src="graphic/dantom-menu/spread.jpg"   alt="Dantom spread 1"  loading="lazy">
         <img src="graphic/dantom-menu/spread2.jpg"  alt="Dantom spread 2"  loading="lazy">
         <img src="graphic/dantom-menu/spread3.jpg"  alt="Dantom spread 3"  loading="lazy">
@@ -729,7 +742,11 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
     <!-- FOOD MENUS — Aamas -->
     <div class="photo-cat" style="margin-top:2.5rem">
       <p class="photo-cat-label">Food Menus — Aamas Restaurant, Oman</p>
-      <div class="spread-strip menus-strip" data-carousel="menus">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="aamas">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="aamas">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-aamas" data-carousel="aamas">
         <img src="graphic/aamas-menu/Aamas After.jpg"   alt="Aamas menu page 1"  loading="lazy">
         <img src="graphic/aamas-menu/Aamas After2.jpg"  alt="Aamas menu page 2"  loading="lazy">
         <img src="graphic/aamas-menu/Aamas After3.jpg"  alt="Aamas menu page 3"  loading="lazy">
@@ -755,14 +772,24 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
     <!-- FOOD MENUS — Browniz -->
     <div class="photo-cat" style="margin-top:2.5rem">
       <p class="photo-cat-label">Food Menus — Browniz Coffee House, Muscat, Oman</p>
+
       <p style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted2);margin-bottom:8px;margin-top:1.2rem">Combo Menu</p>
-      <div class="spread-strip" data-carousel="bz-combo">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="bz-combo">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="bz-combo">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-bz-combo" data-carousel="bz-combo">
         <img src="graphic/browniz-menus/combo-01.jpg" alt="Browniz Combo menu page 1" loading="lazy">
         <img src="graphic/browniz-menus/combo-02.jpg" alt="Browniz Combo menu page 2" loading="lazy">
         <img src="graphic/browniz-menus/combo-03.jpg" alt="Browniz Combo menu page 3" loading="lazy">
       </div>
+
       <p style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted2);margin-bottom:8px;margin-top:1.8rem">Breakfast Menu</p>
-      <div class="spread-strip menus-strip" data-carousel="bz-breakfast">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="bz-breakfast">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="bz-breakfast">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-bz-breakfast" data-carousel="bz-breakfast">
         <img src="graphic/browniz-menus/breakfast-01.jpg" alt="Browniz Breakfast page 1"  loading="lazy">
         <img src="graphic/browniz-menus/breakfast-02.jpg" alt="Browniz Breakfast page 2"  loading="lazy">
         <img src="graphic/browniz-menus/breakfast-03.jpg" alt="Browniz Breakfast page 3"  loading="lazy">
@@ -780,8 +807,13 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
         <img src="graphic/browniz-menus/breakfast-15.jpg" alt="Browniz Breakfast page 15" loading="lazy">
         <img src="graphic/browniz-menus/breakfast-16.jpg" alt="Browniz Breakfast page 16" loading="lazy">
       </div>
+
       <p style="font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted2);margin-bottom:8px;margin-top:1.8rem">Details Menu</p>
-      <div class="spread-strip menus-strip" data-carousel="bz-details">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="bz-details">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="bz-details">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-bz-details" data-carousel="bz-details">
         <img src="graphic/browniz-menus/details-01.jpg" alt="Browniz Details page 1"  loading="lazy">
         <img src="graphic/browniz-menus/details-02.jpg" alt="Browniz Details page 2"  loading="lazy">
         <img src="graphic/browniz-menus/details-03.jpg" alt="Browniz Details page 3"  loading="lazy">
@@ -819,19 +851,23 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
     <!-- POSTERS & ROLL-UP BANNERS -->
     <div class="photo-cat" style="margin-top:2.5rem">
       <p class="photo-cat-label">Posters &amp; Roll-up Banners</p>
-      <div class="graphic-grid gd-tall">
-        <img src="graphic/large-boards/roalup.jpg"          alt="Roll-up banner"    loading="lazy">
-        <img src="graphic/large-boards/raolup2.jpg"         alt="Roll-up banner"    loading="lazy">
-        <img src="graphic/large-boards/raolup3.jpg"         alt="Roll-up banner"    loading="lazy">
-        <img src="graphic/large-boards/raol up 4.jpg"       alt="Roll-up banner"    loading="lazy">
-        <img src="graphic/large-boards/roalup5.jpg"         alt="Roll-up banner"    loading="lazy">
-        <img src="graphic/posters/fedexGolf25.jpg"          alt="FedEx Golf poster" loading="lazy">
-        <img src="graphic/posters/fedexposter 2.jpg"        alt="FedEx poster"      loading="lazy">
-        <img src="graphic/posters/fedexposter 3.jpg"        alt="FedEx poster"      loading="lazy">
-        <img src="graphic/posters/fedexposter 565.jpg"      alt="FedEx poster"      loading="lazy">
-        <img src="graphic/posters/fedexposter storm.jpg"    alt="FedEx storm poster" loading="lazy">
-        <img src="graphic/posters/fedexposter copy.jpg"     alt="FedEx poster"      loading="lazy">
-        <img src="graphic/posters/fedexposter 2 copy.jpg"   alt="FedEx poster"      loading="lazy">
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="posters">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="posters">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-posters" data-carousel="posters">
+        <img src="graphic/large-boards/roalup.jpg"        alt="Roll-up banner"     loading="lazy">
+        <img src="graphic/large-boards/raolup2.jpg"       alt="Roll-up banner"     loading="lazy">
+        <img src="graphic/large-boards/raolup3.jpg"       alt="Roll-up banner"     loading="lazy">
+        <img src="graphic/large-boards/raol up 4.jpg"     alt="Roll-up banner"     loading="lazy">
+        <img src="graphic/large-boards/roalup5.jpg"       alt="Roll-up banner"     loading="lazy">
+        <img src="graphic/posters/fedexGolf25.jpg"        alt="FedEx Golf poster"  loading="lazy">
+        <img src="graphic/posters/fedexposter 2.jpg"      alt="FedEx poster"       loading="lazy">
+        <img src="graphic/posters/fedexposter 3.jpg"      alt="FedEx poster"       loading="lazy">
+        <img src="graphic/posters/fedexposter 565.jpg"    alt="FedEx poster"       loading="lazy">
+        <img src="graphic/posters/fedexposter storm.jpg"  alt="FedEx storm poster" loading="lazy">
+        <img src="graphic/posters/fedexposter copy.jpg"   alt="FedEx poster"       loading="lazy">
+        <img src="graphic/posters/fedexposter 2 copy.jpg" alt="FedEx poster"       loading="lazy">
       </div>
     </div>
 
