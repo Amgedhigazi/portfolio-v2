@@ -126,6 +126,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.9
 .spread-strip img{width:100%;height:auto;display:block;background:#0d0d0d;cursor:zoom-in;filter:brightness(0.82);transition:filter 0.25s,transform 0.25s}
 .spread-strip img:hover{filter:brightness(1);transform:scale(1.02)}
 .menus-strip{grid-template-columns:repeat(6,1fr)}
+.fashion-strip{grid-template-columns:repeat(3,1fr)}
+.fashion-pair{display:flex;gap:2px}
+.fashion-pair img{flex:1;min-width:0}
 /* CAROUSEL */
 .car-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.97);z-index:950;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s}
 .car-overlay.open{opacity:1;pointer-events:all}
@@ -458,6 +461,54 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
       </div>
     </div>
     <div class="photo-cat" style="margin-top:2rem">
+      <p class="photo-cat-label">Fashion — Bochum 2022</p>
+      <div class="spread-strip fashion-strip" data-carousel="fashion">
+        <div class="fashion-pair">
+          <img src="photos/fashion-web/dsc_3742.jpg" alt="Fashion portrait" loading="lazy">
+          <img src="photos/fashion-web/dsc_3747.jpg" alt="Fashion portrait" loading="lazy">
+        </div>
+        <img src="photos/fashion-web/dsc_3778.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_3815.jpg" alt="Fashion" loading="lazy">
+        <div class="fashion-pair">
+          <img src="photos/fashion-web/dsc_3753.jpg" alt="Fashion portrait" loading="lazy">
+          <img src="photos/fashion-web/dsc_3756.jpg" alt="Fashion portrait" loading="lazy">
+        </div>
+        <img src="photos/fashion-web/dsc_3850.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_3884.jpg" alt="Fashion" loading="lazy">
+        <div class="fashion-pair">
+          <img src="photos/fashion-web/dsc_3768.jpg" alt="Fashion portrait" loading="lazy">
+          <img src="photos/fashion-web/dsc_3770.jpg" alt="Fashion portrait" loading="lazy">
+        </div>
+        <img src="photos/fashion-web/dsc_3908.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_3923.jpg" alt="Fashion" loading="lazy">
+        <div class="fashion-pair">
+          <img src="photos/fashion-web/dsc_3773.jpg" alt="Fashion portrait" loading="lazy">
+          <img src="photos/fashion-web/dsc_3774.jpg" alt="Fashion portrait" loading="lazy">
+        </div>
+        <img src="photos/fashion-web/dsc_3952.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_3987.jpg" alt="Fashion" loading="lazy">
+        <div class="fashion-pair">
+          <img src="photos/fashion-web/dsc_3788.jpg" alt="Fashion portrait" loading="lazy">
+          <img src="photos/fashion-web/dsc_3796.jpg" alt="Fashion portrait" loading="lazy">
+        </div>
+        <img src="photos/fashion-web/dsc_4038.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4074.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_3825.jpg" alt="Fashion portrait" loading="lazy">
+        <img src="photos/fashion-web/dsc_4112.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4168.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4212.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4251.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4403.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4513.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4537.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4560.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4614.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4687.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4730.jpg" alt="Fashion" loading="lazy">
+        <img src="photos/fashion-web/dsc_4770.jpg" alt="Fashion" loading="lazy">
+      </div>
+    </div>
+    <div class="photo-cat" style="margin-top:2rem">
       <p class="photo-cat-label">Corporate, Landscape, Sport & Food</p>
       <div class="photo-grid">
         <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_1215.JPG" alt="Corporate photography">
@@ -614,10 +665,10 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
     <div class="photo-cat">
       <p class="photo-cat-label">Covers</p>
       <div class="graphic-grid gd-portrait">
-        <img src="graphic/adds/isboua4again.jpg"                  alt="Al-Assboua magazine cover" loading="lazy">
+        <img src="graphic/ads/isboua4again.jpg"                   alt="Al-Assboua magazine cover" loading="lazy">
         <img src="graphic/published/4-5-cover-E1_Template-TW.jpg" alt="The Week cover"            loading="lazy">
-        <img src="graphic/adds/Septnew.jpg"                       alt="September issue cover"     loading="lazy">
-        <img src="graphic/adds/asboaad.jpg"                       alt="Al-Assboua cover"          loading="lazy">
+        <img src="graphic/ads/Septnew.jpg"                        alt="September issue cover"     loading="lazy">
+        <img src="graphic/ads/asboaad.jpg"                        alt="Al-Assboua cover"          loading="lazy">
         <img src="https://amgedhigazi.github.io/Portfolio-1/image/The Youm Cover.jpg" alt="Al Youm cover" loading="lazy">
       </div>
     </div>
