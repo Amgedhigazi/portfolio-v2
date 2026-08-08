@@ -126,15 +126,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(10,10,10,0.9
 .spread-strip img{width:100%;height:auto;display:block;background:#0d0d0d;cursor:zoom-in;filter:brightness(0.82);transition:filter 0.25s,transform 0.25s}
 .spread-strip img:hover{filter:brightness(1);transform:scale(1.02)}
 .menus-strip{grid-template-columns:repeat(6,1fr)}
-.fashion-rail{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-behavior:smooth}
-.fashion-rail::-webkit-scrollbar{height:3px}
-.fashion-rail::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
-.fashion-rail img{width:auto;height:320px;flex-shrink:0}
+.photo-hero{width:100%;height:56vh;overflow:hidden;margin-bottom:2.5rem;background:#0d0d0d}
+.photo-hero img{width:100%;height:100%;object-fit:cover;object-position:center 20%;display:block;filter:brightness(0.8)}
+.rail-btn-row{display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px}
+.rail-btn{width:34px;height:34px;border-radius:50%;border:1px solid #333;background:transparent;color:#aaa;cursor:pointer;font-size:15px;line-height:34px;text-align:center;transition:border-color 0.2s,color 0.2s}
+.rail-btn:hover{border-color:#aaa;color:#fff}
+.photo-rail{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scroll-behavior:smooth}
+.photo-rail::-webkit-scrollbar{height:3px}
+.photo-rail::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+.photo-rail img{width:auto;height:300px;flex-shrink:0}
 .fashion-pair{display:flex;gap:4px;flex-shrink:0}
-.fashion-pair img{height:320px;width:auto;flex-shrink:0}
-.fashion-arr-row{display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px}
-.fashion-arr{width:34px;height:34px;border-radius:50%;border:1px solid #333;background:transparent;color:#aaa;cursor:pointer;font-size:15px;line-height:34px;transition:border-color 0.2s,color 0.2s}
-.fashion-arr:hover{border-color:#aaa;color:#fff}
+.fashion-pair img{height:300px;width:auto;flex-shrink:0}
 /* CAROUSEL */
 .car-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.97);z-index:950;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.25s}
 .car-overlay.open{opacity:1;pointer-events:all}
@@ -427,6 +429,11 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
   </div>
 
   <div class="tab-panel active" id="tab-photography">
+
+    <div class="photo-hero">
+      <img src="photos/fashion-web/dsc_3884.jpg" alt="Photography — Amged Higazi" loading="eager">
+    </div>
+
     <div class="photo-cat">
       <p class="photo-cat-label">Car Review Pages — Published · Apex Press &amp; Publishing, Oman</p>
       <div class="spread-strip" data-carousel="cars">
@@ -437,6 +444,7 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
         <img src="graphic/car-lincoln/50-51.jpg" alt="Lincoln review pages 50–51" loading="lazy">
       </div>
     </div>
+
     <div class="photo-cat" style="margin-top:2rem">
       <p class="photo-cat-label">Olympus Men Magazine — Published · January 2021, Issue #3</p>
       <div class="spread-strip" data-carousel="olympus">
@@ -446,6 +454,7 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
         <img src="graphic/olympus/OlympusMen62-63.jpg" alt="Olympus Men — Heroes pages 62–63" loading="lazy">
       </div>
     </div>
+
     <div class="photo-cat" style="margin-top:2rem">
       <p class="photo-cat-label">Published Photography — Apex Press &amp; Publishing, Oman</p>
       <div class="spread-strip" data-carousel="pub-photo">
@@ -454,25 +463,31 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
         <img src="graphic/published/4-5-cover-E1_Template-TW.jpg" alt="The Week — Walking Alone pages 4–5 spread" loading="lazy">
       </div>
     </div>
+
     <div class="photo-cat" style="margin-top:2rem">
-      <p class="photo-cat-label">Portrait & Fashion</p>
-      <div class="photo-grid">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_4742.jpg" alt="Portrait — Marie">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_4273.jpg" alt="Portrait — Fathulrahman">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/WhatsApp Image 2022-10-22 at 16.40.46.jpeg" alt="Fashion">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/Portrait Final20.jpg" alt="Fashion photography" class="wide">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/Portrait workshop31.jpg" alt="Artistic photography">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/Portrait Final3.jpg" alt="Artistic photography">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/WhatsApp Image 2022-10-22 at 16.40.48 (2).jpeg" alt="Fashion model">
+      <p class="photo-cat-label">Portrait &amp; Fashion</p>
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="portrait">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="portrait">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-portrait" data-carousel="portrait">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_4742.jpg" alt="Portrait — Marie" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_4273.jpg" alt="Portrait — Fathulrahman" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/WhatsApp Image 2022-10-22 at 16.40.46.jpeg" alt="Fashion" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/Portrait Final20.jpg" alt="Fashion photography" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/Portrait workshop31.jpg" alt="Artistic photography" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/Portrait Final3.jpg" alt="Artistic photography" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/WhatsApp Image 2022-10-22 at 16.40.48 (2).jpeg" alt="Fashion model" loading="lazy">
       </div>
     </div>
+
     <div class="photo-cat" style="margin-top:2rem">
       <p class="photo-cat-label">Fashion — Bochum 2022</p>
-      <div class="fashion-arr-row">
-        <button class="fashion-arr" data-dir="-1">&#8592;</button>
-        <button class="fashion-arr" data-dir="1">&#8594;</button>
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="fashion">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="fashion">&#8594;</button>
       </div>
-      <div class="spread-strip fashion-rail" id="fashion-rail" data-carousel="fashion">
+      <div class="photo-rail spread-strip" id="rail-fashion" data-carousel="fashion">
         <div class="fashion-pair">
           <img src="photos/fashion-web/dsc_3742.jpg" alt="Fashion" loading="lazy">
           <img src="photos/fashion-web/dsc_3747.jpg" alt="Fashion" loading="lazy">
@@ -518,17 +533,23 @@ footer{border-top:0.5px solid var(--border);padding:2.5rem 3rem;display:flex;jus
         <img src="photos/fashion-web/dsc_4770.jpg" alt="Fashion" loading="lazy">
       </div>
     </div>
+
     <div class="photo-cat" style="margin-top:2rem">
-      <p class="photo-cat-label">Corporate, Landscape, Sport & Food</p>
-      <div class="photo-grid">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_1215.JPG" alt="Corporate photography">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/WhatsApp Image 2022-10-22 at 16.39.26.jpeg" alt="Landscape">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_106900.jpg" alt="Sport photography">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/IMG_20220330_193625_028.jpg" alt="Conceptual photography" class="wide">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/spread9.jpg" alt="Food — Dantom Restaurant">
-        <img src="https://amgedhigazi.github.io/Portfolio-1/image/FILE0018.jpg" alt="Photography">
+      <p class="photo-cat-label">Corporate, Landscape, Sport &amp; Food</p>
+      <div class="rail-btn-row">
+        <button class="rail-btn" data-dir="-1" data-rail="corporate">&#8592;</button>
+        <button class="rail-btn" data-dir="1" data-rail="corporate">&#8594;</button>
+      </div>
+      <div class="photo-rail spread-strip" id="rail-corporate" data-carousel="corporate">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_1215.JPG" alt="Corporate photography" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/WhatsApp Image 2022-10-22 at 16.39.26.jpeg" alt="Landscape" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/DSC_106900.jpg" alt="Sport photography" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/IMG_20220330_193625_028.jpg" alt="Conceptual photography" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/spread9.jpg" alt="Food — Dantom Restaurant" loading="lazy">
+        <img src="https://amgedhigazi.github.io/Portfolio-1/image/FILE0018.jpg" alt="Photography" loading="lazy">
       </div>
     </div>
+
     <div class="view-more-bar">
       <span class="view-more-label">See more</span>
       <a class="view-more-link" href="https://amgedhigazi.github.io/Sign2art/" target="_blank">Sign²Art — Full Portfolio ↗</a>
@@ -1055,14 +1076,12 @@ function showTab(id,btn){
   });
 })();
 
-(function(){
-  var rail = document.getElementById('fashion-rail');
-  document.querySelectorAll('.fashion-arr').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      rail.scrollBy({left: parseInt(btn.dataset.dir) * 480, behavior:'smooth'});
-    });
+document.querySelectorAll('.rail-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var rail = document.getElementById('rail-' + btn.dataset.rail);
+    if(rail) rail.scrollBy({left: parseInt(btn.dataset.dir) * 480, behavior:'smooth'});
   });
-})();
+});
 </script>
 </body>
 </html>
